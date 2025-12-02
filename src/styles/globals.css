@@ -1,0 +1,292 @@
+/* 
+  ===================================
+  DIRECTIVAS GLOBALES DE ALINEACIÓN
+  Y UTILIDADES COMUNES
+  ===================================
+*/
+
+@layer components {
+  /* ALINEACIÓN Y LAYOUT */
+  
+  /* Centro vertical y horizontal (flex) */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Centro vertical (flex) */
+  .flex-center-y {
+    @apply flex items-center;
+  }
+
+  /* Centro horizontal (flex) */
+  .flex-center-x {
+    @apply flex justify-center;
+  }
+
+  /* Grid center */
+  .grid-center {
+    @apply grid place-items-center;
+  }
+
+  /* Centrado absoluto (position absolute en el padre) */
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  /* Centrado fijo (position fixed en el padre) */
+  .fixed-center {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  /* Full screen center */
+  .screen-center {
+    @apply min-h-screen w-full flex items-center justify-center;
+  }
+
+  /* Full viewport center (fijo) */
+  .viewport-center {
+    @apply fixed inset-0 flex items-center justify-center;
+  }
+
+  /* CONTENEDORES COMUNES */
+
+  /* Contenedor con padding y alineación */
+  .container-centered {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm;
+  }
+
+  /* Card con padding */
+  .card-padded {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6;
+  }
+
+  /* TYPOGRAFÍA */
+
+  /* Heading base */
+  .heading-1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  .heading-4 {
+    @apply text-xl font-semibold;
+  }
+
+  /* Texto muted (texto secundario) */
+  .text-muted {
+    @apply text-muted-foreground;
+  }
+
+  /* Texto pequeño */
+  .text-small {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* EFECTOS Y ESTADOS */
+
+  /* Transición suave */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Hover elevado (shadow) */
+  .hover-elevated {
+    @apply hover:shadow-lg transition-all duration-300 ease-in-out;
+  }
+
+  /* ESPACIADO */
+
+  /* Stack vertical (flex column con gap) */
+  .stack-v {
+    @apply flex flex-col gap-4;
+  }
+
+  /* Stack horizontal (flex row con gap) */
+  .stack-h {
+    @apply flex flex-row gap-4;
+  }
+
+  /* Stack con gap personalizado */
+  .stack-tight {
+    @apply flex flex-col gap-2;
+  }
+
+  .stack-loose {
+    @apply flex flex-col gap-6;
+  }
+
+  /* INPUTS Y FORMS */
+
+  /* Input base */
+  .input-base {
+    @apply px-3 py-2 rounded-md border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+  }
+
+  /* Label base */
+  .label-base {
+    @apply text-sm font-medium text-foreground;
+  }
+
+  /* Form group (label + input) */
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+
+  /* Error text */
+  .text-error {
+    @apply text-sm text-destructive;
+  }
+
+  /* BOTONES (si no usas componentes de UI) */
+
+  .btn-base {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring bg-secondary text-secondary-foreground hover:bg-secondary/90;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-ring border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground;
+  }
+
+  /* UTILIDADES RESPONSIVE */
+
+  /* Flex en mobile, grid en desktop */
+  .flex-to-grid {
+    @apply flex flex-col md:grid md:grid-cols-2;
+  }
+
+  /* Ocultar en mobile, mostrar en desktop */
+  .hidden-mobile {
+    @apply hidden md:block;
+  }
+
+  /* Mostrar en mobile, ocultar en desktop */
+  .visible-mobile {
+    @apply md:hidden;
+  }
+
+  /* OVERLAY Y MODALES */
+
+  /* Overlay oscuro */
+  .overlay-dark {
+    @apply fixed inset-0 bg-black/50 z-40;
+  }
+
+  /* Modal base */
+  .modal-base {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-background rounded-lg shadow-xl;
+  }
+}
+
+@layer utilities {
+  /* UTILIDADES ADICIONALES */
+
+  /* Truncate text (una línea) */
+  .line-clamp-1 {
+    @apply truncate;
+  }
+
+  /* Truncate 2 líneas */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Truncate 3 líneas */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Scroll suave */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* No seleccionable */
+  .select-none-all {
+    @apply select-none pointer-events-none;
+  }
+
+  /* Visually hidden pero accesible para screen readers */
+  .sr-only-custom {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* ANIMACIONES PERSONALIZADAS */
+@layer components {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.3s ease-out;
+  }
+
+  .animate-slide-in-down {
+    animation: slideInDown 0.3s ease-out;
+  }
+}

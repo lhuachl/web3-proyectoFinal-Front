@@ -1,0 +1,275 @@
+{
+  "auth": {
+    "users": [
+      {
+        "id": "1",
+        "name": "Juan Pérez",
+        "email": "juan@peluqueria.com",
+        "password": "password123",
+        "role": "cliente",
+        "createdAt": "2025-11-25T10:00:00Z",
+        "updatedAt": "2025-11-25T10:00:00Z"
+      },
+      {
+        "id": "2",
+        "name": "María García",
+        "email": "maria@peluqueria.com",
+        "password": "password123",
+        "role": "peluquera",
+        "createdAt": "2025-11-25T10:00:00Z",
+        "updatedAt": "2025-11-25T10:00:00Z"
+      },
+      {
+        "id": "3",
+        "name": "Carlos López",
+        "email": "carlos@peluqueria.com",
+        "password": "password123",
+        "role": "admin",
+        "createdAt": "2025-11-25T10:00:00Z",
+        "updatedAt": "2025-11-25T10:00:00Z"
+      }
+    ],
+    "tokens": [
+      {
+        "id": "token_1",
+        "userId": "1",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Imp1YW5AcGVsdXF1ZXJpYS5jb20iLCJuYW1lIjoiSnVhbiBQw6lyZXoifQ.signature1",
+        "expiresAt": "2025-12-25T10:00:00Z",
+        "createdAt": "2025-11-25T10:00:00Z"
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "1",
+      "name": "Corte de cabello",
+      "description": "Corte moderno y personalizado",
+      "price": 25.00,
+      "duration": 30,
+      "category": "cortes",
+      "image": "https://via.placeholder.com/200",
+      "isActive": true,
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Tintura",
+      "description": "Tintura profesional con productos de calidad",
+      "price": 45.00,
+      "duration": 60,
+      "category": "colorimetria",
+      "image": "https://via.placeholder.com/200",
+      "isActive": true,
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Peinado",
+      "description": "Peinado para eventos especiales",
+      "price": 35.00,
+      "duration": 45,
+      "category": "peinados",
+      "image": "https://via.placeholder.com/200",
+      "isActive": true,
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Tratamiento capilar",
+      "description": "Tratamiento profundo de hidratación",
+      "price": 30.00,
+      "duration": 40,
+      "category": "tratamientos",
+      "image": "https://via.placeholder.com/200",
+      "isActive": true,
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Barba profesional",
+      "description": "Afeitado y recorte de barba",
+      "price": 20.00,
+      "duration": 25,
+      "category": "hombre",
+      "image": "https://via.placeholder.com/200",
+      "isActive": true,
+      "createdAt": "2025-11-25T10:00:00Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "serviceId": "1",
+      "peluqueraId": "2",
+      "dateTime": "2025-11-26T14:00:00Z",
+      "duration": 30,
+      "status": "confirmado",
+      "notes": "Cliente preferente",
+      "totalPrice": 25.00,
+      "createdAt": "2025-11-25T10:00:00Z",
+      "updatedAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "clientId": "1",
+      "serviceId": "2",
+      "peluqueraId": "2",
+      "dateTime": "2025-11-27T10:00:00Z",
+      "duration": 60,
+      "status": "pendiente",
+      "notes": "",
+      "totalPrice": 45.00,
+      "createdAt": "2025-11-25T10:00:00Z",
+      "updatedAt": "2025-11-25T10:00:00Z"
+    }
+  ],
+  "peluqueras": [
+    {
+      "id": "2",
+      "name": "María García",
+      "email": "maria@peluqueria.com",
+      "phone": "+34 612 345 678",
+      "specialties": ["cortes", "colorimetria", "tratamientos"],
+      "bio": "Estilista con 8 años de experiencia",
+      "rating": 4.8,
+      "reviews": 24,
+      "isActive": true,
+      "avatar": "https://via.placeholder.com/150",
+      "workingHours": {
+        "monday": { "start": "09:00", "end": "18:00" },
+        "tuesday": { "start": "09:00", "end": "18:00" },
+        "wednesday": { "start": "09:00", "end": "18:00" },
+        "thursday": { "start": "09:00", "end": "20:00" },
+        "friday": { "start": "09:00", "end": "20:00" },
+        "saturday": { "start": "10:00", "end": "16:00" },
+        "sunday": null
+      },
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Laura Martínez",
+      "email": "laura@peluqueria.com",
+      "phone": "+34 612 345 679",
+      "specialties": ["peinados", "cortes"],
+      "bio": "Especialista en peinados de novia",
+      "rating": 4.9,
+      "reviews": 32,
+      "isActive": true,
+      "avatar": "https://via.placeholder.com/150",
+      "workingHours": {
+        "monday": { "start": "09:00", "end": "18:00" },
+        "tuesday": { "start": "09:00", "end": "18:00" },
+        "wednesday": null,
+        "thursday": { "start": "09:00", "end": "20:00" },
+        "friday": { "start": "09:00", "end": "20:00" },
+        "saturday": { "start": "10:00", "end": "18:00" },
+        "sunday": null
+      },
+      "createdAt": "2025-11-25T10:00:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "peluqueraId": "2",
+      "appointmentId": "1",
+      "rating": 5,
+      "comment": "Excelente servicio, muy profesional",
+      "createdAt": "2025-11-26T15:30:00Z"
+    },
+    {
+      "id": "2",
+      "clientId": "3",
+      "peluqueraId": "2",
+      "appointmentId": "2",
+      "rating": 4,
+      "comment": "Muy bueno, recomendado",
+      "createdAt": "2025-11-26T16:00:00Z"
+    }
+  ],
+  "availability": [
+    {
+      "id": "1",
+      "peluqueraId": "2",
+      "date": "2025-11-26",
+      "slots": [
+        { "time": "09:00", "available": true },
+        { "time": "09:30", "available": true },
+        { "time": "10:00", "available": false },
+        { "time": "10:30", "available": true },
+        { "time": "11:00", "available": true },
+        { "time": "11:30", "available": false },
+        { "time": "14:00", "available": false },
+        { "time": "14:30", "available": true },
+        { "time": "15:00", "available": true },
+        { "time": "15:30", "available": true }
+      ]
+    }
+  ],
+  "promotions": [
+    {
+      "id": "1",
+      "title": "Descuento por primer corte",
+      "description": "20% de descuento en tu primer corte",
+      "discount": 20,
+      "type": "percentage",
+      "code": "PRIMER20",
+      "validFrom": "2025-11-25T00:00:00Z",
+      "validUntil": "2025-12-31T23:59:59Z",
+      "maxUses": 100,
+      "currentUses": 12,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "title": "Combo: Corte + Barba",
+      "description": "Ahorra $5 en este combo",
+      "discount": 5,
+      "type": "fixed",
+      "code": "COMBO5",
+      "validFrom": "2025-11-25T00:00:00Z",
+      "validUntil": "2025-12-31T23:59:59Z",
+      "maxUses": 50,
+      "currentUses": 8,
+      "isActive": true
+    }
+  ],
+  "gallery": [
+    {
+      "id": "1",
+      "peluqueraId": "2",
+      "title": "Corte moderno",
+      "description": "Último trabajo realizado",
+      "imageUrl": "https://via.placeholder.com/400x300",
+      "category": "cortes",
+      "createdAt": "2025-11-25T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "peluqueraId": "2",
+      "title": "Tintura castaño",
+      "description": "Resultado de tintura profesional",
+      "imageUrl": "https://via.placeholder.com/400x300",
+      "category": "colorimetria",
+      "createdAt": "2025-11-24T10:00:00Z"
+    }
+  ],
+  "settings": {
+    "businessHours": {
+      "monday": { "start": "09:00", "end": "18:00" },
+      "tuesday": { "start": "09:00", "end": "18:00" },
+      "wednesday": { "start": "09:00", "end": "18:00" },
+      "thursday": { "start": "09:00", "end": "20:00" },
+      "friday": { "start": "09:00", "end": "20:00" },
+      "saturday": { "start": "10:00", "end": "16:00" },
+      "sunday": null
+    },
+    "currency": "USD",
+    "timezone": "America/New_York",
+    "appointmentNoticeTime": 24,
+    "cancellationTime": 48
+  }
+}
