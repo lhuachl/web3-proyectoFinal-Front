@@ -18,8 +18,5 @@ export const SignUpSchema = z.object({
 export type LoginInput = z.infer<typeof LoginSchema>;
 export type SignUpInput = z.infer<typeof SignUpSchema>;
 
-export interface User {
-  id: string;
-  email: string;
-  name: string;
-}
+// Re-exportar User desde api.types para mantener compatibilidad
+export type { UserDto as User } from '@/types/api.types';
